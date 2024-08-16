@@ -1,0 +1,27 @@
+<!-- <!DOCTYPE html> -->
+ 
+{% extends "base.html" %}
+{% load myfilter %}
+    {% block body_block %}
+    <h1>Topic Names</h1>
+    <table>
+        <thead>
+            <th>Topic Name</th>
+        </thead>
+        {% for topic in topics %}
+        <tr>
+            <td>{{ topic.top_name }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'first_app:loginform' %}">LoginForm</a>
+    <a href="{% url 'first_app:cardgame' %}">card-game</a>
+    <a href="{% url 'first_app:home' %}">Home</a>
+    <a href="{% url 'first_app:user' %}">userform</a>
+
+    <h3>InforMation</h3>
+    <h4>Name: {{ details.name|cut:'l' }}</h4>
+    <h4>Age: {{ details.age }}</h4>
+
+
+{% endblock %}
